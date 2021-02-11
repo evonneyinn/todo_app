@@ -1,12 +1,18 @@
 <template>
   <li>
-    <div v-if="newItem">
-      <input v-model="newStr" type="text" defaultValue="" />
-      <button v-on:click="addItem">Add</button>
-    </div>
-    <div v-else>
-      <button v-on:click="unfold">New Todo</button>
-    </div>
+    <v-card>
+      <div v-if="newItem">
+        <input v-model="newStr" type="text" defaultValue="" style="width: 60%" />
+        <v-btn v-on:click="addItem" color="info" style="width: 40%">
+          Add
+        </v-btn>
+      </div>
+      <div v-else>
+        <v-btn v-on:click="unfold" color="primary" style="width: 100%">
+          New Todo
+        </v-btn>
+      </div>
+    </v-card>
   </li>
 </template>
 
@@ -33,3 +39,18 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+h3 {
+  margin: 40px 0 0;
+}
+li {
+  display: block;
+  margin: 0 10px;
+  text-align: center;
+}
+
+a {
+  color: #42b983;
+}
+</style>
